@@ -13,4 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('/register', 'AuthController@register')->name('register');
+
+Route::get('/login', 'AuthController@login')->name('login');

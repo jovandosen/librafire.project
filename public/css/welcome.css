@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+div#auth-links-container {
+	background-color: #999;
+	padding: 10px;
+}
+
+div#auth-links-container ul {
+	list-style-type: none;
+}
+
+div#auth-links-container ul li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+div#auth-links-container ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 22px;
+}
+
+div#auth-links-container ul li a:hover {
+	color: lightblue;
+	transition: 0.4s;
+}
