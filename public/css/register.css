@@ -1,0 +1,58 @@
+div#register-form-container {
+	border: 2px solid #999;
+	width: 600px;
+	height: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+div#first-name-container {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+div#last-name-container, div#email-container, div#password-container {
+	margin-left: 10px;
+}
+
+#first-name, #last-name, #email, #password {
+	width: 577px;
+	padding: 5px;
+	outline: none;
+}
+
+div#first-name-error-container, div#last-name-error-container, div#email-error-container, div#password-error-container {
+	height: 17px;
+	padding-left: 2px;
+}
+
+div#password-field-container {
+	position: relative;
+}
+
+#password-eye {
+	position: absolute;
+	font-size: 22px;
+	top: 3px;
+	left: 550px;
+}
+
+div#register-button-container {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+#register-button {
+	background-color: white;
+	border: 1px solid #999;
+	padding: 5px;
+	width: 577px;
+	outline: none;
+}
+
+#register-button:hover {
+	background-color: lightblue;
+	color: white;
+	transition: 0.4s;
+}
