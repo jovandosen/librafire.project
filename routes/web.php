@@ -16,5 +16,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/register', 'AuthController@register')->name('register');
+Route::post('/register', 'AuthController@registerData');
 
 Route::get('/login', 'AuthController@login')->name('login');

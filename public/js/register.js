@@ -144,6 +144,10 @@ function validateRegisterData()
 		}
 	}
 
+	if( error === false ){
+		$("#register-form").submit();
+	}
+
 }
 
 function validateEmailAddress(email)
