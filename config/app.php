@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        LibraFireProject\Providers\AppServiceProvider::class,
+        LibraFireProject\Providers\AuthServiceProvider::class,
+        // LibraFireProject\Providers\BroadcastServiceProvider::class,
+        LibraFireProject\Providers\EventServiceProvider::class,
+        LibraFireProject\Providers\RouteServiceProvider::class,
 
     ],
 

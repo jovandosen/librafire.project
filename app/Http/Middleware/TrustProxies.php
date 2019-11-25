@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace LibraFireProject\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;
