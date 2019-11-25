@@ -4,6 +4,7 @@ namespace LibraFireProject\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\RegisterRequest;
+use LibraFireProject\User;
 
 class AuthController extends Controller
 {
@@ -19,7 +20,9 @@ class AuthController extends Controller
     	$email = $request->input('email');
     	$password = $request->input('password');
 
-    	// 
+    	$user = new User();
+
+    	var_dump($user);
 
     }
 
