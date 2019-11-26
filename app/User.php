@@ -22,5 +22,28 @@ class User extends Connection
         $record->bind_param("ssssss", $firstName, $lastName, $email, $password, $dateTime, $dateTime);
 
         $record->execute();
+    }
+
+    public function getAllEmails()
+    {
+        $emailSql = "SELECT email FROM users";
+
+        $records = $this->connection->query($emailSql);
+
+        $emails = [];
+
+        if( $records->num_rows > 0 ){
+            while( $row = mysqli_fetch_object($records) ){
+                $emails[] = $row->email;
+            }
+        }
+
+        $emails = json_encode($emails);
+
+        $records->close();
+
+        $this->connection->close();
+
+        echo $emails;
     }    
 }

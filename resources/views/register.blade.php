@@ -81,6 +81,8 @@
 				<button type="button" id="register-button">REGISTER</button>
 			</div>
 
+			<input type="hidden" name="email-address" id="email-address" value="" />
+
 			@csrf
 		</form>
 	</div>

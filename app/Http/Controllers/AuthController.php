@@ -41,4 +41,10 @@ class AuthController extends Controller
     {
     	return view('login');
     }
+
+    public function emails()
+    {
+    	$info = new User();
+    	$info->getAllEmails();
+    }
 }
