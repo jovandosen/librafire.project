@@ -2,9 +2,12 @@
 
 namespace LibraFireProject\Http\Controllers;
 
+use View;
+use Mail;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\RegisterRequest;
 use LibraFireProject\User;
+use LibraFireProject\Mail\WelcomeMail;
 
 class AuthController extends Controller
 {
@@ -22,8 +25,16 @@ class AuthController extends Controller
 
     	$user = new User();
 
-    	var_dump($user);
+    	$user->register($firstName, $lastName, $email, $password);
 
+    	Mail::to($email)->send(new WelcomeMail($firstName));
+
+    	return redirect()->route('home');
+    }
+
+    public function home()
+    {
+    	return View::make('profile.home');
     }
 
     public function login()
