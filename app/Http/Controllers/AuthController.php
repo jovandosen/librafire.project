@@ -25,7 +25,9 @@ class AuthController extends Controller
 
     	$user = new User();
 
-    	$user->register($firstName, $lastName, $email, $password);
+    	$userData = $user->register($firstName, $lastName, $email, $password);
+
+    	session(['user' => $userData]);
 
     	Mail::to($email)->send(new WelcomeMail($firstName));
 

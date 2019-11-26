@@ -22,6 +22,10 @@ class User extends Connection
         $record->bind_param("ssssss", $firstName, $lastName, $email, $password, $dateTime, $dateTime);
 
         $record->execute();
+
+        $user = $this->getUserByEmail($email);
+
+        return $user;
     }
 
     public function getAllEmails()
@@ -45,5 +49,28 @@ class User extends Connection
         $this->connection->close();
 
         echo $emails;
+    }
+
+    public function getUserByEmail($email)
+    {
+        $userSql = "SELECT * FROM users WHERE email=?";
+
+        $record = $this->connection->prepare($userSql);
+
+        $record->bind_param("s", $email);
+
+        $record->execute();
+
+        $userDetails = $record->get_result();
+
+        $user = '';
+
+        if( $userDetails->num_rows === 1 ){
+            while( $row = mysqli_fetch_object($userDetails) ){
+                $user = $row;
+            }
+        }
+
+        return $user;
     }    
 }

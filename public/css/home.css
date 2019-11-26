@@ -1,0 +1,13 @@
+#user-details-wrapper {
+	position: relative;
+}
+
+#user-details-links {
+	position: absolute;
+	background-color: #999;
+	text-align: center;
+	display: inline-grid;
+	top: 26px;
+	left: -3px;
+	width: 110px;
+}
