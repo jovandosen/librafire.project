@@ -1,0 +1,28 @@
+div#login-form-container {
+	border: 2px solid #999;
+	width: 600px;
+	height: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+
+div#login-button-container {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+#login-button {
+	background-color: white;
+	border: 1px solid #999;
+	padding: 5px;
+	width: 577px;
+	outline: none;
+}
+
+#login-button:hover {
+	background-color: lightblue;
+	color: white;
+	transition: 0.4s;
+}

@@ -49,6 +49,15 @@ class AuthController extends Controller
     	return view('login');
     }
 
+    public function loginData(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        var_dump($email);
+        var_dump($password);
+    }
+
     public function logout(Request $request)
     {
     	$request->session()->forget('user');

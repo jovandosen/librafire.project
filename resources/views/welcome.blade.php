@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/welcome.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/register.css') !!}">
+        <link rel="stylesheet" type="text/css" href="{!! asset('css/login.css') !!}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -31,5 +32,6 @@
 
         <script src="{!! asset('js/welcome.js') !!}"></script>
         <script src="{!! asset('js/register.js') !!}"></script>
+        <script src="{!! asset('js/login.js') !!}"></script>
     </body>
 </html>
