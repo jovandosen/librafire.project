@@ -59,6 +59,16 @@ class AuthController extends Controller
 
         $userData = $user->login($email, $password);
 
+        if( is_array($userData) ){
+
+            if( $userData[0] == 'email' ){
+                return redirect()->back()->with('emailError', $userData[1]);
+            } else {
+                return redirect()->back()->with('passwordError', $userData[1])->with('emailOk', $email);
+            }
+
+        }
+
         if( is_object($userData) ){
 
             session(['user' => $userData]);
