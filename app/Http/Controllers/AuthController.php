@@ -7,6 +7,7 @@ use Mail;
 use Log;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\RegisterRequest;
+use LibraFireProject\Http\Requests\LoginRequest;
 use LibraFireProject\User;
 use LibraFireProject\Mail\WelcomeMail;
 
@@ -49,13 +50,23 @@ class AuthController extends Controller
     	return view('login');
     }
 
-    public function loginData(Request $request)
+    public function loginData(LoginRequest $request)
     {
         $email = $request->input('email');
         $password = $request->input('password');
 
-        var_dump($email);
-        var_dump($password);
+        $user = new User();
+
+        $userData = $user->login($email, $password);
+
+        if( is_object($userData) ){
+
+            session(['user' => $userData]);
+
+            return redirect()->route('home');
+
+        }
+
     }
 
     public function logout(Request $request)

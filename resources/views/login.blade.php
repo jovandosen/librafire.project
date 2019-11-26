@@ -47,6 +47,8 @@
 				<button type="button" id="login-button">LOGIN</button>
 			</div>
 
+			<input type="hidden" name="email-address" id="email-address" value="" />
+
 			@csrf
 		</form>
 	</div>

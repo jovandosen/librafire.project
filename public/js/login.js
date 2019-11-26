@@ -10,6 +10,7 @@ function validateLoginData()
 {
 	var email = $("#email").val();
 	var password = $("#password").val();
+	var userEmails = $("#email-address").val();
 
 	var error = false;
 	var emailError = '';
@@ -20,13 +21,26 @@ function validateLoginData()
 		emailError = 'Email can not be empty.';
 		$("#email-error-container p").text(emailError);
 		$("#email").addClass("error-border");
+	} else if( validateEmailAddress(email) === false ) {
+		error = true;
+		emailError = 'Email address is not valid.';
+		$("#email-error-container p").text(emailError);
+		$("#email").addClass("error-border");
 	} else {
-		if( validateEmailAddress(email) === false ){
-			error = true;
-			emailError = 'Email address is not valid.';
-			$("#email-error-container p").text(emailError);
-			$("#email").addClass("error-border");
+		userEmails = userEmails.split(",");
+		var emailCount = 0;
+		for( var i = 0; i < userEmails.length; i++ ){
+			if( email == userEmails[i] ){
+				emailCount = 1;
+			}
 		}
+	}
+
+	if( emailCount === 0 ){
+		error = true;
+		emailError = 'Email does not exist.';
+		$("#email-error-container p").text(emailError);
+		$("#email").addClass("error-border");
 	}
 
 	if( emailError == '' ){
