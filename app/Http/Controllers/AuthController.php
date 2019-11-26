@@ -4,6 +4,7 @@ namespace LibraFireProject\Http\Controllers;
 
 use View;
 use Mail;
+use Log;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\RegisterRequest;
 use LibraFireProject\User;
@@ -29,7 +30,11 @@ class AuthController extends Controller
 
     	session(['user' => $userData]);
 
-    	Mail::to($email)->send(new WelcomeMail($firstName));
+    	Log::info('New user successfully registered.');
+
+    	$request->session()->flash('status', 'You have successfully registered.');
+
+    	Mail::to($userData->email)->send(new WelcomeMail($userData->firstName));
 
     	return redirect()->route('home');
     }
@@ -42,6 +47,13 @@ class AuthController extends Controller
     public function login()
     {
     	return view('login');
+    }
+
+    public function logout(Request $request)
+    {
+    	$request->session()->forget('user');
+		$request->session()->flush();
+		return redirect()->route('login');
     }
 
     public function emails()

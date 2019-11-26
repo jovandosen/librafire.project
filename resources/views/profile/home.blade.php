@@ -18,7 +18,7 @@
                     <ul id="user-details-links" style="display: none;">
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Item</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -28,6 +28,12 @@
             @yield('content')
         </div>
 
+        @if( session()->has('status') )
+            <div id="flash-message-container">
+                <p>{{ session()->get('status') }}</p>
+            </div>
+        @endif
+        
         <script src="{!! asset('js/home.js') !!}"></script>
     </body>
 </html>

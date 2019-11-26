@@ -20,6 +20,8 @@ Route::post('/register', 'AuthController@registerData');
 
 Route::get('/login', 'AuthController@login')->name('login');
 
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
 Route::get('/home', 'AuthController@home')->name('home');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');
