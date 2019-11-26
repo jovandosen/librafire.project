@@ -60,6 +60,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'check.auth' => \LibraFireProject\Http\Middleware\CheckAuth::class,
+        'check.signed' => \LibraFireProject\Http\Middleware\CheckSigned::class,
     ];
 
     /**

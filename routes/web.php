@@ -15,14 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/register', 'AuthController@register')->name('register');
+Route::get('/register', 'AuthController@register')->name('register')->middleware('check.signed');
 Route::post('/register', 'AuthController@registerData');
 
-Route::get('/login', 'AuthController@login')->name('login');
+Route::get('/login', 'AuthController@login')->name('login')->middleware('check.signed');
 Route::post('/login', 'AuthController@loginData');
 
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
-Route::get('/home', 'AuthController@home')->name('home');
+Route::get('/home', 'AuthController@home')->name('home')->middleware('check.auth');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');
