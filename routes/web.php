@@ -21,6 +21,8 @@ Route::post('/register', 'AuthController@registerData');
 Route::get('/login', 'AuthController@login')->name('login')->middleware('check.signed');
 Route::post('/login', 'AuthController@loginData');
 
+Route::get('/profile', 'UserController@profile')->name('profile');
+
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
 Route::get('/home', 'AuthController@home')->name('home')->middleware('check.auth');
