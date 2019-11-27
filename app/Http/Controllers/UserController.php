@@ -38,4 +38,9 @@ class UserController extends Controller
     {
     	return view('profile.password');
     }
+
+    public function passwordData()
+    {
+        echo "WELL AND GOOD";
+    }
 }

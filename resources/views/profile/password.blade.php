@@ -49,7 +49,7 @@
 			</div>
 
 			<div id="update-password-button-container">
-				<button id="update-password">UPDATE</button>
+				<button id="update-password" type="button">UPDATE</button>
 			</div>
 
 			@csrf

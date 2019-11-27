@@ -39,6 +39,8 @@ Route::middleware('check.auth')->group(function(){
 
 Route::patch('/profile', 'UserController@profileData');
 
+Route::patch('/password', 'UserController@passwordData');
+
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');
