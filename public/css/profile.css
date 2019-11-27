@@ -54,3 +54,12 @@
 	background-color: lightblue;
 	transition: 0.5s;
 }
+
+#profile-first-name-error, #profile-last-name-error, #profile-email-error {
+	margin-left: 87px;
+	color: red;
+}
+
+.error-border-profile {
+	border-bottom: 1px solid red !important;
+}

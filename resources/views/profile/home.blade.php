@@ -37,5 +37,6 @@
         @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
+        <script src="{!! asset('js/profile.js') !!}"></script>
     </body>
 </html>
