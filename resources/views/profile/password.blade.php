@@ -15,6 +15,7 @@
 				</div>
 				<div id="current-password-container-field">
 					<input type="password" name="current-password" id="current-password" />
+					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-current" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="current-password-container-error">
 					<p></p>
@@ -27,6 +28,7 @@
 				</div>
 				<div id="new-password-container-field">
 					<input type="password" name="new-password" id="new-password" />
+					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-new" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="new-password-container-error">
 					<p></p>
@@ -39,6 +41,7 @@
 				</div>
 				<div id="new-password-repeat-container-field">
 					<input type="password" name="new-password-repeat" id="new-password-repeat" />
+					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-new-repeat" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="new-password-repeat-container-error">
 					<p></p>

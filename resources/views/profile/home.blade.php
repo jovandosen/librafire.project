@@ -45,5 +45,6 @@
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>
+        <script src="{!! asset('js/password.js') !!}"></script>
     </body>
 </html>
