@@ -106,5 +106,26 @@ class User extends Connection
 
         }
 
+    }
+
+    public function update($firstName, $lastName, $email, $id)
+    {
+        $updateSql = "UPDATE users SET firstName=?, lastName=?, email=?, updated_at=? WHERE id=?";
+
+        $record = $this->connection->prepare($updateSql);
+
+        $currentTime = date('Y-m-d H:i:s');
+
+        $record->bind_param("ssssi", $firstName, $lastName, $email, $currentTime, $id);
+
+        $record->execute();
+
+        $user = $this->getUserByEmail($email);
+
+        $record->close();
+
+        $this->connection->close();
+
+        return $user;
     }    
 }

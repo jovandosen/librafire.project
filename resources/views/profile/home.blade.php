@@ -35,6 +35,12 @@
                 <p>{{ session()->get('status') }}</p>
             </div>
         @endif
+
+        @if( session()->has('updated') )
+            <div id="flash-message-container">
+                <p>{{ session()->get('updated') }}</p>
+            </div>
+        @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>

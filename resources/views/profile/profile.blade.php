@@ -22,7 +22,7 @@
 				</div>
 				<div id="profile-first-name-field">
 					<input type="text" name="first-name-profile" id="first-name-profile" value="{{ $firstName }}" 
-						class="@if( $errors->has('first-name-profile') ) {{ 'error-border-profile' }} @endif" />
+						class="@if( $errors->has('first-name-profile') ) {{ 'error-border-profile' }} @endif" autocomplete="off" />
 				</div>
 				<div id="profile-first-name-error">
 					<p>
@@ -39,7 +39,7 @@
 				</div>
 				<div id="profile-last-name-field">
 					<input type="text" name="last-name-profile" id="last-name-profile" value="{{ $lastName }}" 
-						class="@if( $errors->has('last-name-profile') ) {{ 'error-border-profile' }} @endif" />
+						class="@if( $errors->has('last-name-profile') ) {{ 'error-border-profile' }} @endif" autocomplete="off" />
 				</div>
 				<div id="profile-last-name-error">
 					<p>
@@ -56,7 +56,7 @@
 				</div>
 				<div id="profile-email-field">
 					<input type="text" name="email-profile" id="email-profile" value="{{ $email }}" 
-						class="@if( $errors->has('email-profile') ) {{ 'error-border-profile' }} @endif" />
+						class="@if( $errors->has('email-profile') ) {{ 'error-border-profile' }} @endif" autocomplete="off" />
 				</div>
 				<div id="profile-email-error">
 					<p>
