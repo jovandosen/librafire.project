@@ -14,11 +14,16 @@
 					<label for="current-password">Current Password:</label>
 				</div>
 				<div id="current-password-container-field">
-					<input type="password" name="current-password" id="current-password" />
+					<input type="password" name="current-password" id="current-password" 
+						class="@if( $errors->has('current-password') ) {{ 'error-wrapper' }} @endif" />
 					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-current" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="current-password-container-error">
-					<p></p>
+					<p>
+						@if( $errors->has('current-password') )
+							{{ $errors->first('current-password') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
@@ -27,11 +32,16 @@
 					<label for="new-password">New Password:</label>
 				</div>
 				<div id="new-password-container-field">
-					<input type="password" name="new-password" id="new-password" />
+					<input type="password" name="new-password" id="new-password" 
+						class="@if( $errors->has('new-password') ) {{ 'error-wrapper' }} @endif" />
 					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-new" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="new-password-container-error">
-					<p></p>
+					<p>
+						@if( $errors->has('new-password') )
+							{{ $errors->first('new-password') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
@@ -40,11 +50,16 @@
 					<label for="new-password-repeat">Repeat new:</label>
 				</div>
 				<div id="new-password-repeat-container-field">
-					<input type="password" name="new-password-repeat" id="new-password-repeat" />
+					<input type="password" name="new-password-repeat" id="new-password-repeat" 
+						class="@if( $errors->has('new-password-repeat') ) {{ 'error-wrapper' }} @endif" />
 					<i class="fa fa-eye-slash" aria-hidden="true" id="password-eye-new-repeat" onclick="hideShowPassword(this)"></i>
 				</div>
 				<div id="new-password-repeat-container-error">
-					<p></p>
+					<p>
+						@if( $errors->has('new-password-repeat') )
+							{{ $errors->first('new-password-repeat') }}
+						@endif
+					</p>
 				</div>
 			</div>
 

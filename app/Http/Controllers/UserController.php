@@ -5,6 +5,7 @@ namespace LibraFireProject\Http\Controllers;
 use LibraFireProject\User;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\ProfileRequest;
+use LibraFireProject\Http\Requests\PasswordRequest;
 
 class UserController extends Controller
 {
@@ -39,8 +40,13 @@ class UserController extends Controller
     	return view('profile.password');
     }
 
-    public function passwordData()
+    public function passwordData(PasswordRequest $request)
     {
-        echo "WELL AND GOOD";
+        $currentPassword = $request->input('current-password');
+        $newPassword = $request->input('new-password');
+        $newPasswordRepeat = $request->input('new-password-repeat');
+
+        //
+
     }
 }
