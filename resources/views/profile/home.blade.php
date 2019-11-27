@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="{!! asset('css/welcome.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/home.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/profile.css') !!}">
+        <link rel="stylesheet" type="text/css" href="{!! asset('css/password.css') !!}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -18,7 +19,7 @@
                     <a href="#">{{ session('user')->firstName }} {{ session('user')->lastName }}</a>
                     <ul id="user-details-links" style="display: none;">
                         <li><a href="{{ route('profile') }}">Profile</a></li>
-                        <li><a href="#">Password</a></li>
+                        <li><a href="{{ route('password') }}">Password</a></li>
                         <li><a href="#">Item</a></li>
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     </ul>

@@ -33,4 +33,9 @@ class UserController extends Controller
 
     	return redirect()->route('profile');
     }
+
+    public function password()
+    {
+    	return view('profile.password');
+    }
 }

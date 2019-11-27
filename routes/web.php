@@ -33,6 +33,8 @@ Route::middleware('check.auth')->group(function(){
 
 	Route::get('/home', 'AuthController@home')->name('home');
 
+	Route::get('/password', 'UserController@password')->name('password');
+
 });
 
 Route::patch('/profile', 'UserController@profileData');
