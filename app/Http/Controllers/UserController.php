@@ -6,6 +6,7 @@ use LibraFireProject\User;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\ProfileRequest;
 use LibraFireProject\Http\Requests\PasswordRequest;
+use LibraFireProject\Http\Requests\ItemRequest;
 
 class UserController extends Controller
 {
@@ -76,5 +77,17 @@ class UserController extends Controller
     public function item()
     {
         return view('profile.item');
+    }
+
+    public function itemData(ItemRequest $request)
+    {
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $price = $request->input('price');
+        $payment = $request->input('payment');
+        $delivery = $request->input('delivery');
+
+        //
+
     }
 }

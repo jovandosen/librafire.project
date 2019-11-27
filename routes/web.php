@@ -43,6 +43,8 @@ Route::patch('/profile', 'UserController@profileData');
 
 Route::patch('/password', 'UserController@passwordData');
 
+Route::post('/item', 'UserController@itemData');
+
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');

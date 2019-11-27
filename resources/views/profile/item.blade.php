@@ -10,43 +10,58 @@
 			
 			<div id="item-name-container">
 				<div id="item-name-label-container">
-					<label for="name">Name:</label>
+					<label for="name"><font color="red">*</font>Name:</label>
 				</div>
 				<div id="item-name-field-container">
-					<input type="text" name="name" id="name" placeholder="Enter item name..." autocomplete="off" />
+					<input type="text" name="name" id="name" placeholder="Enter item name..." autocomplete="off" 
+						class="@if( $errors->has('name') ) {{ 'error-box' }} @endif" />
 				</div>
 				<div id="item-name-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('name') )
+							{{ $errors->first('name') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
 			<div id="item-description-container">
 				<div id="item-description-label-container">
-					<label for="description">Description:</label>
+					<label for="description"><font color="red">*</font>Description:</label>
 				</div>
 				<div id="item-description-field-container">
-					<input type="text" name="description" id="description" placeholder="Enter item description..." autocomplete="off" />
+					<input type="text" name="description" id="description" placeholder="Enter item description..." autocomplete="off" 
+						class="@if( $errors->has('description') ) {{ 'error-box' }} @endif" />
 				</div>
 				<div id="item-description-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('description') )
+							{{ $errors->first('description') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
 			<div id="item-price-container">
 				<div id="item-price-label-container">
-					<label for="price">Price:</label>
+					<label for="price"><font color="red">*</font>Price:</label>
 				</div>
 				<div id="item-price-field-container">
-					<input type="text" name="price" id="price" placeholder="Enter item price..." autocomplete="off" />
+					<input type="text" name="price" id="price" placeholder="Enter item price..." autocomplete="off" 
+						class="@if( $errors->has('price') ) {{ 'error-box' }} @endif" />
 				</div>
 				<div id="item-price-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('price') )
+							{{ $errors->first('price') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
 			<div id="item-payment-container">
 				<div id="item-payment-label-container">
-					<label for="payment">Payment:</label>
+					<label for="payment"><font color="red">*</font>Payment:</label>
 				</div>
 				<div id="item-payment-field-container">
 					<select name="payment" id="payment">
@@ -56,13 +71,17 @@
 					</select>
 				</div>
 				<div id="item-payment-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('payment') )
+							{{ $errors->first('payment') }}
+						@endif
+					</p>
 				</div>
 			</div>
 
 			<div id="item-delivery-container">
 				<div id="item-delivery-label-container">
-					<label for="delivery">Delivery:</label>
+					<label for="delivery"><font color="red">*</font>Delivery:</label>
 				</div>
 				<div id="item-delivery-field-container">
 					<select name="delivery" id="delivery">
@@ -72,7 +91,11 @@
 					</select>
 				</div>
 				<div id="item-delivery-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('delivery') )
+							{{ $errors->first('delivery') }}
+						@endif
+					</p>
 				</div>
 			</div>
 

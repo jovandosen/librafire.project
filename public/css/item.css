@@ -2,7 +2,7 @@
 	margin-left: 30px;
 	margin-top: 30px;
 	width: 500px;
-	height: 500px;
+	height: 450px;
 	border: 2px solid #999;
 	padding: 10px;
 }
@@ -19,6 +19,7 @@
 
 #payment, #delivery {
 	padding: 5px;
+	outline: none;
 }
 
 #delivery {
@@ -36,4 +37,12 @@
 	background-color: lightblue;
 	transition: 0.3s;
 	color: white;
+}
+
+.error-box {
+	border: 1px solid red;
+}
+
+#item-name-error-container, #item-description-error-container, #item-price-error-container, #item-payment-error-container, #item-delivery-error-container {
+	color: red;
 }
