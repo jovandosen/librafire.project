@@ -46,7 +46,30 @@ class UserController extends Controller
         $newPassword = $request->input('new-password');
         $newPasswordRepeat = $request->input('new-password-repeat');
 
-        //
+        if( $newPassword != $newPasswordRepeat ){
+            return redirect()->back()->with('dontMatch', 'New and Repeat Password do not match.');
+        }
 
+        $userDetails = session('user');
+
+        $userPassword = $userDetails->password;
+
+        if( !password_verify($currentPassword, $userPassword) ){
+            return redirect()->back()->with('wrongPassword', 'Wrong Password.');
+        }
+
+        $id = $userDetails->id;
+
+        $userEmail = $userDetails->email;
+
+        $user = new User();
+
+        $userData = $user->updatePassword($newPassword, $id, $userEmail);
+
+        session(['user' => $userData]);
+
+        $request->session()->flash('passwordUpdated', 'You have successfully updated password.');
+
+        return redirect()->route('password');
     }
 }

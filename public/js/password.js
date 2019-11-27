@@ -112,6 +112,12 @@ function validatePasswordUpdate()
 		}
 	}
 
+	if( newPassword != newPasswordRepeat ){
+		error = true;
+		var dontMatchError = 'New and Repeat Password do not match.';
+		$("#new-password-repeat-container-error p").text(dontMatchError);
+	}
+
 	if( error === false ){
 		$("#password-form").submit();
 	}

@@ -23,6 +23,12 @@
 						@if( $errors->has('current-password') )
 							{{ $errors->first('current-password') }}
 						@endif
+
+						@php
+							if( session()->has('wrongPassword') ){
+								echo session('wrongPassword');
+							}
+						@endphp
 					</p>
 				</div>
 			</div>
@@ -59,6 +65,12 @@
 						@if( $errors->has('new-password-repeat') )
 							{{ $errors->first('new-password-repeat') }}
 						@endif
+
+						@php
+							if( session()->has('dontMatch') ){
+								echo session('dontMatch');
+							}
+						@endphp
 					</p>
 				</div>
 			</div>

@@ -127,5 +127,28 @@ class User extends Connection
         $this->connection->close();
 
         return $user;
+    }
+
+    public function updatePassword($newPassword, $id, $email)
+    {
+        $updatePasswordSql = "UPDATE users SET password=?, updated_at=? WHERE id=?";
+
+        $record = $this->connection->prepare($updatePasswordSql);
+
+        $currentTime = date('Y-m-d H:i:s');
+
+        $newPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+        $record->bind_param("ssi", $newPassword, $currentTime, $id);
+
+        $record->execute();
+
+        $user = $this->getUserByEmail($email);
+
+        $record->close();
+
+        $this->connection->close();
+
+        return $user;
     }    
 }
