@@ -72,4 +72,9 @@ class UserController extends Controller
 
         return redirect()->route('password');
     }
+
+    public function item()
+    {
+        return view('profile.item');
+    }
 }

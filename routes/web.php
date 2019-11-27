@@ -35,6 +35,8 @@ Route::middleware('check.auth')->group(function(){
 
 	Route::get('/password', 'UserController@password')->name('password');
 
+	Route::get('/item', 'UserController@item')->name('item');
+
 });
 
 Route::patch('/profile', 'UserController@profileData');
