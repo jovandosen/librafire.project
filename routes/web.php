@@ -12,20 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 })->name('welcome');
 
-Route::get('/register', 'AuthController@register')->name('register')->middleware('check.signed');
+Route::middleware('check.signed')->group(function(){
+
+	Route::get('/register', 'AuthController@register')->name('register');
+
+	Route::get('/login', 'AuthController@login')->name('login');
+
+});
+
 Route::post('/register', 'AuthController@registerData');
 
-Route::get('/login', 'AuthController@login')->name('login')->middleware('check.signed');
 Route::post('/login', 'AuthController@loginData');
 
-Route::get('/profile', 'UserController@profile')->name('profile')->middleware('check.auth');
-Route::post('/profile', 'UserController@profileData');
+Route::middleware('check.auth')->group(function(){
+
+	Route::get('/profile', 'UserController@profile')->name('profile');
+
+	Route::get('/home', 'AuthController@home')->name('home');
+
+});
+
+Route::patch('/profile', 'UserController@profileData');
 
 Route::get('/logout', 'AuthController@logout')->name('logout');
-
-Route::get('/home', 'AuthController@home')->name('home')->middleware('check.auth');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');

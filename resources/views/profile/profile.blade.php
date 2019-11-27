@@ -14,6 +14,7 @@
 @section('content')
 	<div id="profile-data-container">
 		<form method="POST" action="{{ route('profile') }}" id="profile-form">
+			@method('patch')
 
 			<div id="profile-first-name-container">
 				<div id="profile-first-name-label">
