@@ -3,6 +3,7 @@
 namespace LibraFireProject\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LibraFireProject\Http\Requests\ProfileRequest;
 
 class UserController extends Controller
 {
@@ -11,14 +12,13 @@ class UserController extends Controller
     	return view('profile.profile');
     }
 
-    public function profileData(Request $request)
+    public function profileData(ProfileRequest $request)
     {
     	$firstName = $request->input('first-name-profile');
     	$lastName = $request->input('last-name-profile');
     	$email = $request->input('email-profile');
 
-    	var_dump($firstName);
-    	var_dump($lastName);
-    	var_dump($email);
+    	//
+
     }
 }

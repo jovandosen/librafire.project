@@ -20,9 +20,16 @@
 					<label for="first-name-profile">First Name:</label>
 				</div>
 				<div id="profile-first-name-field">
-					<input type="text" name="first-name-profile" id="first-name-profile" value="{{ $firstName }}" />
+					<input type="text" name="first-name-profile" id="first-name-profile" value="{{ $firstName }}" 
+						class="@if( $errors->has('first-name-profile') ) {{ 'error-border-profile' }} @endif" />
 				</div>
-				<div id="profile-first-name-error"><p></p></div>
+				<div id="profile-first-name-error">
+					<p>
+						@if( $errors->has('first-name-profile') )
+							{{ $errors->first('first-name-profile') }}
+						@endif
+					</p>
+				</div>
 			</div>
 
 			<div id="profile-last-name-container">
@@ -30,9 +37,16 @@
 					<label for="last-name-profile">Last Name:</label>
 				</div>
 				<div id="profile-last-name-field">
-					<input type="text" name="last-name-profile" id="last-name-profile" value="{{ $lastName }}" />
+					<input type="text" name="last-name-profile" id="last-name-profile" value="{{ $lastName }}" 
+						class="@if( $errors->has('last-name-profile') ) {{ 'error-border-profile' }} @endif" />
 				</div>
-				<div id="profile-last-name-error"><p></p></div>
+				<div id="profile-last-name-error">
+					<p>
+						@if( $errors->has('last-name-profile') )
+							{{ $errors->first('last-name-profile') }}
+						@endif
+					</p>
+				</div>
 			</div>
 
 			<div id="profile-email-container">
@@ -40,9 +54,16 @@
 					<label for="email-profile">Email:</label>
 				</div>
 				<div id="profile-email-field">
-					<input type="text" name="email-profile" id="email-profile" value="{{ $email }}" />
+					<input type="text" name="email-profile" id="email-profile" value="{{ $email }}" 
+						class="@if( $errors->has('email-profile') ) {{ 'error-border-profile' }} @endif" />
 				</div>
-				<div id="profile-email-error"><p></p></div>
+				<div id="profile-email-error">
+					<p>
+						@if( $errors->has('email-profile') )
+							{{ $errors->first('email-profile') }}
+						@endif
+					</p>
+				</div>
 			</div>
 
 			<div id="profile-button-container">
