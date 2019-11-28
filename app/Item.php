@@ -118,4 +118,21 @@ class Item extends Connection
     		return "Error while updating Item.";
     	}
     }
+
+    public function allItems()
+    {
+        $sql = "SELECT * FROM items";
+
+        $records = $this->connection->query($sql);
+
+        $items = [];
+
+        if( $records ){
+            while( $row = mysqli_fetch_object($records) ){
+                $items[] = $row;
+            }
+        }
+
+        return $items;
+    }
 }

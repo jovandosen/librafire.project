@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-})->name('welcome');
+Route::get('/', 'AppController@welcome')->name('welcome');
 
 Route::middleware('check.signed')->group(function(){
 
@@ -42,6 +40,8 @@ Route::middleware('check.auth')->group(function(){
 	Route::get('/item/delete/{id}', 'UserController@deleteItem')->name('item.delete');
 
 	Route::get('/item/update/{id}', 'UserController@updateItem')->name('item.update');
+
+	Route::get('/item/offer/{id}', 'AppController@itemOffer')->name('item.offer');
 
 });
 

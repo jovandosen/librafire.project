@@ -27,6 +27,9 @@
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('welcome') }}">Homepage</a>
+                </li>
             </ul>
         </div>
 
