@@ -112,4 +112,15 @@ class UserController extends Controller
 
         return redirect()->route('item');
     }
+
+    public function itemList()
+    {
+        $userID = session('user')->id;
+
+        $item = new Item();
+
+        $items = $item->itemList($userID);
+
+        return view('profile.list', ['items' => $items]);
+    }
 }

@@ -29,4 +29,30 @@ class Item extends Connection
     		return "Error while creating Item.";
     	}
     }
+
+    public function itemList($userID)
+    {
+    	$itemListSql = "SELECT name, description, price, payment, delivery, firstName, lastName 
+    					FROM items 
+    					INNER JOIN users ON items.userID=users.id
+    					WHERE users.id=?";
+
+    	$records = $this->connection->prepare($itemListSql);
+    	
+    	$records->bind_param("i", $userID);
+
+    	$records->execute();
+
+    	$results = $records->get_result();
+
+    	$items = [];
+
+    	if( $results->num_rows > 0 ){
+    		while( $row = mysqli_fetch_object($results) ){
+    			$items[] = $row;
+    		}
+    	}
+
+    	return $items;				
+    }
 }

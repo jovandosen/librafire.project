@@ -22,6 +22,7 @@
                         <li><a href="{{ route('profile') }}">Profile</a></li>
                         <li><a href="{{ route('password') }}">Password</a></li>
                         <li><a href="{{ route('item') }}">Item</a></li>
+                        <li><a href="{{ route('item.list') }}">Item List</a></li>
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </li>
