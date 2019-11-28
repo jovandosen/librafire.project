@@ -129,10 +129,21 @@
 					<label for="offer">Offer:</label>
 				</div>
 				<div id="offer-field-container">
-					<input type="number" name="offer" id="offer" min="{{ $item->price }}" />
+					<input type="number" name="offer" id="offer" min="{{ $item->price }}" 
+						class="@if( $errors->has('offer') ) {{ 'offer-error-wrapper' }} @endif" />
 				</div>
 				<div id="offer-error-container">
-					<p></p>
+					<p>
+						@if( $errors->has('offer') )
+							{{ $errors->first('offer') }}
+						@endif
+
+						@php
+							if( session()->has('offerError') ){
+								echo session('offerError');
+							}
+						@endphp
+					</p>
 				</div>
 			</div>
 
