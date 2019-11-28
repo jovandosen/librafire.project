@@ -136,4 +136,41 @@ class UserController extends Controller
 
         return redirect()->route('item.list');
     }
+
+    public function updateItem($id)
+    {
+        $item = new Item();
+
+        $details = $item->findItemById($id);
+
+        return view('profile.update', ['item' => $details]);
+    }
+
+    public function updateItemData($id, ItemRequest $request)
+    {
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $price = $request->input('price');
+        $payment = $request->input('payment');
+        $delivery = $request->input('delivery');
+        $userID = $request->input('userID');
+        $image = $request->file('image');
+
+        if( isset($image) && !empty($image) ){
+            
+            if( $image->isValid() ){
+                $imageName = $image->getClientOriginalName();
+                $imageExtension = $image->extension();
+                $imagePath = $image->path();
+                $storeItemImage = $image->store('items');
+                $image = $imageName;
+            }
+
+        } else {
+            $image = trim($request->input('item-image-hidden'));
+        }
+
+        //
+
+    }
 }

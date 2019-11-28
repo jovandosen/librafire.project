@@ -72,4 +72,27 @@ class Item extends Connection
     		return "Error while deleting Item.";
     	}
     }
+
+    public function findItemById($id)
+    {
+    	$sql = "SELECT * FROM items WHERE id=?";
+
+    	$record = $this->connection->prepare($sql);
+
+    	$record->bind_param("i", $id);
+
+    	$record->execute();
+
+    	$data = $record->get_result();
+
+    	$item = '';
+
+    	if( $data->num_rows === 1 ){
+    		while( $row = mysqli_fetch_object($data) ){
+    			$item = $row;
+    		}
+    	}
+
+    	return $item;
+    }
 }

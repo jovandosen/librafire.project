@@ -28,7 +28,9 @@
 					<td>{{ $item->delivery }}</td>
 					<td>{{ $item->firstName }}</td>
 					<td>{{ $item->lastName }}</td>
-					<td><a href="#">edit</a></td>
+					<td>
+						<a href="{{ route('item.update', $item->itemID) }}">edit</a>
+					</td>
 					<td>	
 						<a href="{{ route('item.delete', $item->itemID) }}"><font color="red">delete</font></a>
 					</td>

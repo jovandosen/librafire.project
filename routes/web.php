@@ -41,6 +41,8 @@ Route::middleware('check.auth')->group(function(){
 
 	Route::get('/item/delete/{id}', 'UserController@deleteItem')->name('item.delete');
 
+	Route::get('/item/update/{id}', 'UserController@updateItem')->name('item.update');
+
 });
 
 Route::patch('/profile', 'UserController@profileData');
@@ -48,6 +50,8 @@ Route::patch('/profile', 'UserController@profileData');
 Route::patch('/password', 'UserController@passwordData');
 
 Route::post('/item', 'UserController@itemData');
+
+Route::patch('/item/update/{id}', 'UserController@updateItemData');
 
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
