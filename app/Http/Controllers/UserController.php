@@ -170,7 +170,12 @@ class UserController extends Controller
             $image = trim($request->input('item-image-hidden'));
         }
 
-        //
+        $item = new Item();
 
+        $result = $item->updateItem($userID, $name, $description, $price, $payment, $delivery, $image, $id);
+
+        $request->session()->flash('itemUpdated', $result);
+
+        return redirect()->route('item.list');
     }
 }

@@ -65,6 +65,12 @@
                 </font>
             </div>
         @endif
+
+        @if( session()->has('itemUpdated') )
+            <div id="flash-message-container">
+                <p>{{ session()->get('itemUpdated') }}</p>
+            </div>
+        @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>

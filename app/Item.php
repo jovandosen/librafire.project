@@ -95,4 +95,27 @@ class Item extends Connection
 
     	return $item;
     }
+
+    public function updateItem($userID, $name, $description, $price, $payment, $delivery, $image, $id)
+    {
+    	$updateItemSql = "UPDATE items SET userID=?, name=?, description=?, price=?, payment=?, delivery=?, image=?, updated_at=? WHERE id=?";
+
+    	$record = $this->connection->prepare($updateItemSql);
+
+    	$dateTime = date('Y-m-d H:i:s');
+
+    	$record->bind_param("ississssi", $userID, $name, $description, $price, $payment, $delivery, $image, $dateTime, $id);
+
+    	$result = $record->execute();
+
+    	$record->close();
+
+    	$this->connection->close();
+
+    	if( $result ){
+    		return "Item updated successfully.";
+    	} else {
+    		return "Error while updating Item.";
+    	}
+    }
 }
