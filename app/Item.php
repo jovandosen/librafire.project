@@ -32,7 +32,7 @@ class Item extends Connection
 
     public function itemList($userID)
     {
-    	$itemListSql = "SELECT name, description, price, payment, delivery, firstName, lastName 
+    	$itemListSql = "SELECT items.id AS itemID, name, description, price, payment, delivery, firstName, lastName 
     					FROM items 
     					INNER JOIN users ON items.userID=users.id
     					WHERE users.id=?";

@@ -123,4 +123,9 @@ class UserController extends Controller
 
         return view('profile.list', ['items' => $items]);
     }
+
+    public function deleteItem()
+    {
+        echo "so far so good";
+    }
 }

@@ -1,0 +1,22 @@
+#item-list-container {
+	margin-top: 30px;
+	margin-left: 200px;
+}
+
+table, th, td {
+  	border: 1px solid black;
+  	border-collapse: collapse;
+}
+
+th, td {
+  	padding: 15px;
+}
+
+#item-list-header {
+	background-color: lightblue;
+}
+
+.item-list-rows:hover {
+	background-color: #999;
+	color: white;
+}
