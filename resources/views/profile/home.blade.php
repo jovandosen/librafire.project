@@ -75,6 +75,12 @@
                 <p>{{ session()->get('itemUpdated') }}</p>
             </div>
         @endif
+
+        @if( session()->has('offerCreated') )
+            <div id="flash-message-container">
+                <p>{{ session()->get('offerCreated') }}</p>
+            </div>
+        @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>

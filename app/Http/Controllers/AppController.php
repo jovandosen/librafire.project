@@ -47,6 +47,12 @@ class AppController extends Controller
     		return redirect()->back()->with('offerError', 'Offer can not be lower than Price.');
     	}
 
-    	//
+    	$userOffer = new Offer();
+
+    	$result = $userOffer->create($userId, $itemId, $offer);
+
+    	$request->session()->flash('offerCreated', $result);
+
+    	return redirect()->back();
     }
 }

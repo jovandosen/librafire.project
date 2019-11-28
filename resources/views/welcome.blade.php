@@ -28,30 +28,32 @@
 
         <div id="content">
             @yield('content')
-            <div id="all-items-container">
-                <table style="width: 80%">
-                    <tr>
-                        <th>Item Name</th>
-                        <th>Description</th>
-                        <th>Item Price</th>
-                        <th>Payment</th>
-                        <th>Delivery</th>
-                        <th>Created</th>
-                        <th>Option</th>
-                    </tr>
-                    @foreach( $items as $item )
+            @if( !empty($items) && isset($items) )
+                <div id="all-items-container">
+                    <table style="width: 80%">
                         <tr>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->description }}</td>
-                            <td>{{ $item->price }}</td>
-                            <td>{{ $item->payment }}</td>
-                            <td>{{ $item->delivery }}</td>
-                            <td>{{ $item->created_at }}</td>
-                            <td><a href="@if(!empty(session('user'))) {{ route('item.offer', $item->id) }} @else {{ '#' }} @endif">view</a></td>
+                            <th>Item Name</th>
+                            <th>Description</th>
+                            <th>Item Price</th>
+                            <th>Payment</th>
+                            <th>Delivery</th>
+                            <th>Created</th>
+                            <th>Option</th>
                         </tr>
-                    @endforeach
-                </table>
-            </div>
+                        @foreach( $items as $item )
+                            <tr>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->description }}</td>
+                                <td>{{ $item->price }}</td>
+                                <td>{{ $item->payment }}</td>
+                                <td>{{ $item->delivery }}</td>
+                                <td>{{ $item->created_at }}</td>
+                                <td><a href="@if(!empty(session('user'))) {{ route('item.offer', $item->id) }} @else {{ '#' }} @endif">view</a></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            @endif
         </div>
 
         <script src="{!! asset('js/welcome.js') !!}"></script>
