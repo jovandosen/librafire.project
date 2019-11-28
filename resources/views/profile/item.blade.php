@@ -6,7 +6,7 @@
 
 @section('content')
 	<div id="item-container">
-		<form method="POST" action="{{ route('item') }}" id="item-form">
+		<form method="POST" action="{{ route('item') }}" id="item-form" enctype="multipart/form-data">
 			
 			<div id="item-name-container">
 				<div id="item-name-label-container">
@@ -65,6 +65,7 @@
 				</div>
 				<div id="item-payment-field-container">
 					<select name="payment" id="payment">
+						<option value="">Select payment:</option>
 						<option value="cash">Cash Money</option>
 						<option value="card">Credit Card</option>
 						<option value="checks">Checks</option>
@@ -85,6 +86,7 @@
 				</div>
 				<div id="item-delivery-field-container">
 					<select name="delivery" id="delivery">
+						<option value="">Select delivery:</option>
 						<option value="courier">Courier</option>
 						<option value="arrival">Arrival</option>
 						<option value="other">Other</option>
@@ -114,6 +116,8 @@
 			<div id="item-button-container">
 				<button type="button" id="add-item">ADD ITEM</button>
 			</div>
+
+			<input type="hidden" name="userID" id="userID" value="{{ session('user')->id }}" />
 
 			@csrf
 		</form>

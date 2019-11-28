@@ -49,6 +49,12 @@
                 <p>{{ session()->get('passwordUpdated') }}</p>
             </div>
         @endif
+
+        @if( session()->has('itemCreated') )
+            <div id="flash-message-container">
+                <p>{{ session()->get('itemCreated') }}</p>
+            </div>
+        @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>

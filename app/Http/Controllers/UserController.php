@@ -87,9 +87,21 @@ class UserController extends Controller
         $price = $request->input('price');
         $payment = $request->input('payment');
         $delivery = $request->input('delivery');
+        $userID = $request->input('userID');
+        $image = $request->file('image');
+
+        if( isset($image) && !empty($image) ){
+            // process image
+        } else {
+            $image = '';
+        }
 
         $item = new Item();
-        var_dump($item);
+        
+        $result = $item->create($userID, $name, $description, $price, $payment, $delivery, $image);
 
+        $request->session()->flash('itemCreated', $result);
+
+        return redirect()->route('item');
     }
 }
