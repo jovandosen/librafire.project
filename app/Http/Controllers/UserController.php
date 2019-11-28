@@ -91,7 +91,15 @@ class UserController extends Controller
         $image = $request->file('image');
 
         if( isset($image) && !empty($image) ){
-            // process image
+            
+            if( $image->isValid() ){
+                $imageName = $image->getClientOriginalName();
+                $imageExtension = $image->extension();
+                $imagePath = $image->path();
+                $storeItemImage = $image->store('items');
+                $image = $imageName;
+            }
+
         } else {
             $image = '';
         }
