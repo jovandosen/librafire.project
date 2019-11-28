@@ -160,4 +160,31 @@
 			@csrf
 		</form>
 	</div>
+
+	@if( !empty($offers) )
+	<div id="item-offers-container">
+		<table style="width: 100%">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Offer</th>
+				<th>Offer Created</th>
+				<th>Item Name</th>
+			</tr>
+			@foreach($offers as $offer)
+				<tr>
+					<td>{{ $offer->firstName }}</td>
+					<td>{{ $offer->lastName }}</td>
+					<td>{{ $offer->offer }}</td>
+					<td>{{ $offer->created_at }}</td>
+					<td>{{ $offer->name }}</td>
+				</tr>
+			@endforeach
+		</table>
+	</div>
+	@else
+	<div id="item-offers-container">
+		<h4>No Offers for this Item.</h4>
+	</div>
+	@endif
 @endsection

@@ -23,7 +23,11 @@ class AppController extends Controller
 
     	$details = $item->findItemById($id);
 
-    	return view('profile.offer', ['item' => $details]);
+    	$offerData = new Offer();
+
+    	$offers = $offerData->getOffers($id);
+
+    	return view('profile.offer', ['item' => $details, 'offers' => $offers]);
     }
 
     public function addOffer(Request $request)

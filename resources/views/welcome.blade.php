@@ -23,6 +23,9 @@
                 </li>
                 <li><a href="{{ route('register') }}">REGISTER</a></li>
                 <li><a href="{{ route('login') }}">LOGIN</a></li>
+                @if( !empty( session('user') ) )
+                <li><a href="{{ route('home') }}">HOME</a></li>
+                @endif
             </ul>
         </div>
 
