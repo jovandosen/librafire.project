@@ -55,4 +55,21 @@ class Item extends Connection
 
     	return $items;				
     }
+
+    public function deleteItem($id)
+    {
+    	$itemDeleteSql = "DELETE FROM items WHERE id=?";
+
+    	$record = $this->connection->prepare($itemDeleteSql);
+
+    	$record->bind_param("i", $id);
+
+    	$result = $record->execute();
+
+    	if( $result ){
+    		return "Item deleted successfully.";
+    	} else {
+    		return "Error while deleting Item.";
+    	}
+    }
 }

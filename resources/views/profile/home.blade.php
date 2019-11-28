@@ -57,6 +57,14 @@
                 <p>{{ session()->get('itemCreated') }}</p>
             </div>
         @endif
+
+        @if( session()->has('itemDeleted') )
+            <div id="flash-message-container">
+                <font color="red">
+                    <p>{{ session()->get('itemDeleted') }}</p>
+                </font>
+            </div>
+        @endif
         
         <script src="{!! asset('js/home.js') !!}"></script>
         <script src="{!! asset('js/profile.js') !!}"></script>

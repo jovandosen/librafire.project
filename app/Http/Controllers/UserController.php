@@ -124,8 +124,16 @@ class UserController extends Controller
         return view('profile.list', ['items' => $items]);
     }
 
-    public function deleteItem()
+    public function deleteItem($id, Request $request)
     {
-        echo "so far so good";
+        $id = (int) $id;
+        
+        $item = new Item();
+
+        $result = $item->deleteItem($id);
+
+        $request->session()->flash('itemDeleted', $result);
+
+        return redirect()->route('item.list');
     }
 }

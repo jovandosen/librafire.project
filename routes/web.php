@@ -39,6 +39,8 @@ Route::middleware('check.auth')->group(function(){
 
 	Route::get('/item/list', 'UserController@itemList')->name('item.list');
 
+	Route::get('/item/delete/{id}', 'UserController@deleteItem')->name('item.delete');
+
 });
 
 Route::patch('/profile', 'UserController@profileData');
@@ -50,5 +52,3 @@ Route::post('/item', 'UserController@itemData');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 
 Route::post('/emails', 'AuthController@emails')->name('emails');
-
-Route::get('/item/delete/{id}', 'UserController@deleteItem')->name('item.delete');
