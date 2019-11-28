@@ -47,7 +47,7 @@
 					<label for="price"><font color="red">*</font>Price:</label>
 				</div>
 				<div id="item-price-field-container">
-					<input type="text" name="price" id="price" placeholder="Enter item price..." autocomplete="off" 
+					<input type="number" name="price" id="price" placeholder="Enter item price..." autocomplete="off" 
 						class="@if( $errors->has('price') ) {{ 'error-box' }} @endif" />
 				</div>
 				<div id="item-price-error-container">

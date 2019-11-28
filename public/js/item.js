@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
 	$("#add-item").on("click", function(){
-		//validateItemData();
-		$("#item-form").submit();
+		validateItemData();
 	});
 
 });

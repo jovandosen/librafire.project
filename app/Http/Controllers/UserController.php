@@ -3,6 +3,7 @@
 namespace LibraFireProject\Http\Controllers;
 
 use LibraFireProject\User;
+use LibraFireProject\Item;
 use Illuminate\Http\Request;
 use LibraFireProject\Http\Requests\ProfileRequest;
 use LibraFireProject\Http\Requests\PasswordRequest;
@@ -87,7 +88,8 @@ class UserController extends Controller
         $payment = $request->input('payment');
         $delivery = $request->input('delivery');
 
-        //
+        $item = new Item();
+        var_dump($item);
 
     }
 }
