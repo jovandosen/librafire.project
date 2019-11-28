@@ -24,4 +24,9 @@ class AppController extends Controller
 
     	return view('profile.offer', ['item' => $details]);
     }
+
+    public function addOffer()
+    {
+    	echo "Well and Good";
+    }
 }

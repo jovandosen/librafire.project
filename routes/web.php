@@ -43,6 +43,8 @@ Route::middleware('check.auth')->group(function(){
 
 	Route::get('/item/offer/{id}', 'AppController@itemOffer')->name('item.offer');
 
+	Route::post('/add/item/offer', 'AppController@addOffer')->name('add.offer');
+
 });
 
 Route::patch('/profile', 'UserController@profileData');

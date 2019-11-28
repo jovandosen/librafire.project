@@ -1,0 +1,30 @@
+#offer-form-container {
+	margin-top: 30px;
+	margin-left: 30px;
+	border: 2px solid #999;
+	width: 500px;
+	height: 140px;
+	padding: 10px;
+}
+
+#offer {
+	width: 470px;
+	padding: 5px;
+	outline: none;
+}
+
+#offer-button {
+	padding: 5px;
+}
+
+#offer-error-container {
+	color: red;
+}
+
+.offer-error-wrapper {
+	border: 1px solid red;
+}
+
+#offer-data-container {
+	height: 68px;
+}

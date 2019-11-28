@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="{!! asset('css/password.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/item.css') !!}">
         <link rel="stylesheet" type="text/css" href="{!! asset('css/list.css') !!}">
+        <link rel="stylesheet" type="text/css" href="{!! asset('css/offer.css') !!}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -79,5 +80,6 @@
         <script src="{!! asset('js/profile.js') !!}"></script>
         <script src="{!! asset('js/password.js') !!}"></script>
         <script src="{!! asset('js/item.js') !!}"></script>
+        <script src="{!! asset('js/offer.js') !!}"></script>
     </body>
 </html>
